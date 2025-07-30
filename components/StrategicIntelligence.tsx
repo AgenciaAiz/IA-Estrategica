@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import generateStrategicPerspectives from '../services/geminiService';
 import { Report, StrategicPerspective } from '../types';
@@ -6,7 +7,7 @@ import Spinner from './common/Spinner';
 import Card from './common/Card';
 import { Download, Lightbulb, ChevronsUpDown, Layers, Target, CheckSquare } from 'lucide-react';
 
-const PerspectiveCard: React.FC<{ perspective: StrategicPerspective }> = ({ perspective }) => {
+const PerspectiveCard = ({ perspective }: { perspective: StrategicPerspective }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -47,7 +48,7 @@ const PerspectiveCard: React.FC<{ perspective: StrategicPerspective }> = ({ pers
   );
 };
 
-const StrategicIntelligence: React.FC = () => {
+const StrategicIntelligence = () => {
   const [topic, setTopic] = useState<string>('');
   const [perspectives, setPerspectives] = useState<StrategicPerspective[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -145,24 +146,5 @@ const StrategicIntelligence: React.FC = () => {
     </div>
   );
 };
-
-const LucideLightbulb: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.7 10.2 18 9 18 7c0-2.2-1.8-4-4-4S9.8 4.8 9.8 7c0 2 .3 3.2 1.5 4.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-);
-const LucideDownload: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-);
-const LucideChevronsUpDown: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
-);
-const LucideLayers: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-);
-const LucideTarget: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-);
-const LucideCheckSquare: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-);
 
 export default StrategicIntelligence;
