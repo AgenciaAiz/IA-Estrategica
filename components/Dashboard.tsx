@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import StrategicIntelligence from './StrategicIntelligence';
 import History from './History';
@@ -9,7 +10,7 @@ interface DashboardProps {
 
 type View = 'intelligence' | 'history';
 
-const Dashboard: React.FC<DashboardProps> = ({ onLogout = () => {} }) => {
+const Dashboard = ({ onLogout = () => {} }: DashboardProps) => {
   const [activeView, setActiveView] = useState<View>('intelligence');
 
   const NavItem = ({ icon, label, view, active }: { icon: React.ReactNode, label: string, view: View, active: boolean }) => (
@@ -57,15 +58,5 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout = () => {} }) => {
     </div>
   );
 };
-
-const LucideBot: React.FC<{size?: number, className?: string}> = ({size=24, className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-);
-const LucideHistoryIcon: React.FC<{size?: number, className?: string}> = ({size=24, className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
-);
-const LucideLogOut: React.FC<{size?: number, className?: string}> = ({size=24, className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
-);
 
 export default Dashboard;
