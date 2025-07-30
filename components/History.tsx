@@ -1,10 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
-import { Report, StrategicPerspective } from '../types';
+import { Report } from '../types';
 import Card from './common/Card';
 import { ChevronDown, ChevronRight, FileText } from 'lucide-react';
 
-const ReportDetails: React.FC<{ report: Report }> = ({ report }) => {
+const ReportDetails = ({ report }: { report: Report }) => {
     return (
         <div className="pl-8 py-4 bg-slate-800/30 rounded-b-lg">
             <h4 className="text-lg font-semibold text-slate-200 mb-3">Perspectivas ({report.perspectives.length})</h4>
@@ -19,7 +20,7 @@ const ReportDetails: React.FC<{ report: Report }> = ({ report }) => {
     );
 };
 
-const History: React.FC = () => {
+const History = () => {
   const [reports] = useLocalStorage<Report[]>('strategic_reports', []);
   const [groupedReports, setGroupedReports] = useState<Record<string, Report[]>>({});
   const [expandedReportId, setExpandedReportId] = useState<number | null>(null);
@@ -79,16 +80,5 @@ const History: React.FC = () => {
     </div>
   );
 };
-
-const LucideChevronDown: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m6 9 6 6 6-6"/></svg>
-);
-const LucideChevronRight: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m9 18 6-6-6-6"/></svg>
-);
-const LucideFileText: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-);
-
 
 export default History;
