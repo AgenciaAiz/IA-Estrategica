@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc & vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,5 +22,20 @@
     "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
+  }
+}
+
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc && vite build",
+    "start": "vite"
+  },
+  "dependencies": {
+    "vite": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
   }
 }
