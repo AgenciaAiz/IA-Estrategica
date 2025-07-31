@@ -24,18 +24,3 @@
     "vite": "^5.0.0"
   }
 }
-
-{
-  "name": "mi-proyecto",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "tsc && vite build",
-    "start": "vite"
-  },
-  "dependencies": {
-    "vite": "^4.0.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.0.0"
-  }
-}
