@@ -2,7 +2,7 @@
   "compilerOptions": {
     // ... tus opciones ...
   },
-  "include": ["*.ts", "*.tsx", "**/*.ts", "**/*.tsx"],
+  "include": ["*.ts", "*.tsx"],
   "exclude": [
     "node_modules",
     "dist",
