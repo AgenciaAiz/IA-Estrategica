@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    // ... tus opciones ...
+    "target": "ES2015",
+    "lib": ["DOM", "ES2015"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["*.ts", "*.tsx"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "vite.config.ts",
-    "tailwind.config.js",
-    "postcss.config.js"
-  ],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
