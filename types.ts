@@ -1,15 +1,14 @@
 
-export interface StrategicPerspective {
-  perspective_id: number;
-  title: string;
-  layer1_strategy: string;
-  layer2_tactics: string;
-  layer3_actions: string;
+export interface Suggestion {
+  category: 'Bug' | 'Performance' | 'Style' | 'Best Practice' | 'Security';
+  description: string;
+  line_number: number;
+  original_code: string;
+  suggested_code: string;
 }
 
-export interface Report {
-  id: number;
-  topic: string;
-  perspectives: StrategicPerspective[];
-  date: string;
+export interface ReviewResult {
+  overall_summary: string;
+  suggestions: Suggestion[];
 }
+
