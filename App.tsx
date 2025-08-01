@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import LoginScreen from './components/LoginScreen';
 import Dashboard from './components/Dashboard';
@@ -26,3 +25,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
