@@ -59,3 +59,13 @@ Para ejecutar este proyecto en tu máquina local de forma que la generación con
     npx vercel dev
     ```
     Este comando iniciará tu aplicación, leerá tu archivo `.env.local` y hará que el endpoint `/api/generate` funcione en tu máquina local. Abre la URL que te indique en la terminal (usualmente `http://localhost:3000`).
+
+## 🐛 Solución de Problemas
+
+### `Error: Detecting port ... timed out`
+
+Este error puede ocurrir al ejecutar `npx vercel dev`. Significa que la CLI de Vercel no pudo confirmar que el servidor de desarrollo de Vite se inició correctamente. El proyecto ya está preconfigurado en `vite.config.ts` para exponer el servidor de una manera que minimiza este problema. Si el error persiste, podría deberse a un firewall o software de seguridad en tu máquina que bloquea la comunicación de red local.
+
+    npx vercel dev
+    ```
+    Este comando iniciará tu aplicación, leerá tu archivo `.env.local` y hará que el endpoint `/api/generate` funcione en tu máquina local. Abre la URL que te indique en la terminal (usualmente `http://localhost:3000`).
